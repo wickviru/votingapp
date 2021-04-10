@@ -48,15 +48,17 @@ class Controller extends BaseController
 
     public static function index(Request $req)
     {
-    	$resp = DB::select('select * from voterlist');
+    	$qu = DB::select('select * from voterlist');
+    	return json_encode($qu);
+    	$caname = $req->input('caname');
+    	$votername = $req->input('votername');
+    	$gard = $req->input('gard');
+    	$age = $req->input('age');
+    	$mobile = $req->input('mobile');
+    	$voterid = $req->input('voterid');
+    	$gen = $req->input('gen');
+    	$resp = DB::table('voterlist')->where('votername',$votername)->where('gardian',$gard)->where('age' , $age)->where('voterid' , $voterid)->where('gender' , $gen)->get();
     	return json_encode($resp);
-    	// $caname = $req->input('caname');
-    	// $votername = $req->input('votername');
-    	// $gard = $req->input('gard');
-    	// $age = $req->input('age');
-    	// $mobile = $req->input('mobile');
-    	// $voterid = $req->input('voterid');
-    	// $gen = $req->input('gen');
     	// //$cname = 'patan';
     	// $resp = DB::table('voterlist')->insert(
      //   	   ['caname' => $caname, 'votername' => $votername,'gardian'=>$gard,'age'=>$age,'mobile'=>$mobile,'voterid'=>$voterid,'gender'=>$gen]
