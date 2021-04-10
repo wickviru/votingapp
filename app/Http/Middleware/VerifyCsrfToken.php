@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
     	'user',
         'fetchstate',
-        'fetchdistrict'
+        'fetchdistrict',
+        'fetchca'
     ];
 }

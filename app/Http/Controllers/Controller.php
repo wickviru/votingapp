@@ -48,21 +48,36 @@ class Controller extends BaseController
 
     public static function index(Request $req)
     {
+    	$resp = DB::select('select * from voterlist');
+    	return json_encode($resp);
+    	// $caname = $req->input('caname');
+    	// $votername = $req->input('votername');
+    	// $gard = $req->input('gard');
+    	// $age = $req->input('age');
+    	// $mobile = $req->input('mobile');
+    	// $voterid = $req->input('voterid');
+    	// $gen = $req->input('gen');
+    	// //$cname = 'patan';
+    	// $resp = DB::table('voterlist')->insert(
+     //   	   ['caname' => $caname, 'votername' => $votername,'gardian'=>$gard,'age'=>$age,'mobile'=>$mobile,'voterid'=>$voterid,'gender'=>$gen]
+     //   	   );
+    	// return json_encode($resp);
 
-    	$state = DB::select('drop table CAname');
-    	return $state;
+    	// $state = DB::select('drop table CAname');
+    	// return $state;
     	//$state = strtoupper($state);
-    	$state_id = DB::table('states')->where('states',$state )->get();
-    	 return $state_id;
+    	// $state_id = DB::table('caname')->where('district_id',$distr )->get();
+    	// return json_encode($state_id);
+    	 //return $state_id;
     	// $user = DB::table('districts')->where('state_id', )->first();
      //     $users = DB::select('select * from voterlist');
-     //   	//  $arr = ['TINKU','DEVI'];
-			  //   // for($i = 0;$i<count($arr);$i++)
-			  //   // {
-			  //   // 	DB::table('voterlist')->insert(
-     //   	//    ['poll_id' => 648715841436876801, 'votername' => $arr[$i]]
-     //   	//    );
-			  //   // }
+     //   	 $arr = ['TINKU','DEVI'];
+			  //   for($i = 0;$i<count($arr);$i++)
+			  //   {
+			  //   	DB::table('caname')->insert(
+     //   	   ['district_id' => $distr, 'caname' => $cname]
+     //   	   );
+			  //   }
 
 
 			

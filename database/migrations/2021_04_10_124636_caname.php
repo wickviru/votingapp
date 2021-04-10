@@ -14,7 +14,7 @@ class Caname extends Migration
     public function up()
     {
         Schema::create('caname', function (Blueprint $table) {
-                $table->increments('id');
+            $table->increments('id');
             $table->integer('district_id');
             $table->string('caname');
             $table->timestamps();
